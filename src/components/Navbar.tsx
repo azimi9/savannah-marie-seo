@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import { BookingModal } from "./BookingModal";
+
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
@@ -29,9 +31,8 @@ const Navbar = () => {
             <li key={link.to}>
               <Link
                 to={link.to}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.to ? "text-primary" : "text-muted-foreground"
-                }`}
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -40,9 +41,9 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden md:block">
-          <Button asChild>
-            <Link to="/contact">Free SEO Audit</Link>
-          </Button>
+          <BookingModal>
+            <Button>Free SEO Audit</Button>
+          </BookingModal>
         </div>
 
         {/* Mobile toggle */}
@@ -64,18 +65,19 @@ const Navbar = () => {
                 <Link
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className={`block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                    location.pathname === link.to ? "text-primary" : "text-muted-foreground"
-                  }`}
+                  className={`block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+                    }`}
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
             <li className="pt-2">
-              <Button asChild className="w-full">
-                <Link to="/contact" onClick={() => setMobileOpen(false)}>Free SEO Audit</Link>
-              </Button>
+              <BookingModal>
+                <Button className="w-full" onClick={() => setMobileOpen(false)}>
+                  Free SEO Audit
+                </Button>
+              </BookingModal>
             </li>
           </ul>
         </div>

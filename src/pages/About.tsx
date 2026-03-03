@@ -46,10 +46,7 @@ const About = () => {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <div className="aspect-[4/5] rounded-2xl bg-muted flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <Users size={64} className="mx-auto mb-4 opacity-30" />
-                  <p className="text-sm">Professional Photo</p>
-                </div>
+                <img src="/profile.avif" alt="Savannah Marie" className="rounded-2xl w-full h-full object-cover" />
               </div>
             </div>
             <div>
